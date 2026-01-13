@@ -1,0 +1,152 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #e0f7fa, #a5d6a7); /* Sky to grass gradient – Audubon field vibe */
+  color: #333;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Main Container */
+.game-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.game-container.migration {
+  animation: migrationPulse 1.5s ease-in-out infinite;
+  background: linear-gradient(135deg, #90caf9, #a5d6a7, #fff59d); /* Wave sky-grass-glow */
+}
+
+@keyframes migrationPulse {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.92; filter: brightness(1.08); }
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  background-color: #dcedc8; /* Soft native green */
+  border: 3px solid #4caf50;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.cell.invasive {
+  background-color: #ffcdd2 !important;
+  border-color: #e53935;
+  animation: invasivePulse 2s infinite;
+}
+
+@keyframes invasivePulse {
+  0%, 100% { background-color: #ffcdd2; }
+  50% { background-color: #ef9a9a; }
+}
+
+.cell.predator {
+  background-color: #ffe0b2 !important;
+  border-color: #f57c00;
+}
+
+.cell.migrating {
+  box-shadow: 0 0 25px #ffeb3b, inset 0 0 15px #fff176;
+  animation: cellGlow 3s infinite alternate;
+}
+
+@keyframes cellGlow {
+  0% { box-shadow: 0 0 15px #ffeb3b; }
+  100% { box-shadow: 0 0 35px #fff176; }
+}
+
+.plant-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Flying Flock Overlay */
+.flying-flock {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.flying-bird {
+  position: absolute;
+  font-size: 3rem;
+  animation: flyAcross 6s linear infinite;
+  opacity: 0;
+}
+
+.flying-bird .wing-left,
+.flying-bird .wing-right {
+  position: absolute;
+  font-size: 1.2rem;
+  animation: wingFlap 0.4s ease-in-out infinite alternate;
+}
+
+.wing-left { left: -35px; top: 15px; transform-origin: right center; }
+.wing-right { right: -35px; top: 15px; transform-origin: left center; }
+
+@keyframes flyAcross {
+  0% { left: -20%; top: 10%; opacity: 0; transform: rotate(-20deg) scale(0.8); }
+  15% { opacity: 1; transform: rotate(0deg) scale(1); }
+  50% { top: 45%; transform: rotate(10deg) scale(1.15); }
+  85% { top: 65%; transform: rotate(-10deg) scale(0.9); }
+  100% { left: 120%; top: 80%; opacity: 0; transform: rotate(20deg) scale(0.7); }
+}
+
+@keyframes wingFlap {
+  0% { transform: rotate(-25deg); }
+  100% { transform: rotate(30deg); }
+}
+
+/* Perched Birds */
+.perched-bird {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.2rem;
+  animation: perchLand 1.2s ease-out forwards, wingPerch 0.
+.checklist-section {
+  border: 2px solid #4caf50;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.checklist-section input[type="checkbox"] {
+  accent-color: #4caf50;
+}
