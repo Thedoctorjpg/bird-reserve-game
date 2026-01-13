@@ -1,7 +1,3 @@
-Since the game is set in an Audubon context, we should tailor the README.md to reflect the mission of bird conservation and citizen science. This aligns perfectly with the "Nude Food" philosophy of using real, fresh food straight from nature to support local ecosystems.
-
-Below is the updated content for your README.md, incorporating the Audubon focus:
-
 🌿 Audubon Bird Reserve: Habitat Hero Sim
 Welcome to the Audubon Bird Reserve Game, a React-based simulation where you act as a land steward to transform a vacant lot into a high-functioning bird sanctuary. This project is inspired by co-founder Nadia Lim’s "Nude Food" philosophy—the belief that the best nutrition for wildlife comes from fresh, minimally processed food provided by the land.
 
